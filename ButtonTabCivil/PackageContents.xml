@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ApplicationPackage SchemaVersion="1.0" AppVersion="1.0" ProductCode="80826CC8-C570-4B2B-BAA1-9F6B525E580F" Name="ButtonTabCivilAddin">
+	<CompanyDetails Name="ButtonTabCivilAddin" />
+	<Components Description="ButtonTabCivilAddin Civil 3D R2025">
+		<RuntimeRequirements OS="Win64" Platform="AutoCAD*" SeriesMin="R20" SeriesMax="R25"/>
+		<ComponentEntry AppName="ButtonTabCivilAddin Civil 3D"
+							Version="1.0.0"
+							ModuleName="./Contents/ButtonTabCivil.dll"
+							AppDescription="ButtonTabCivilAddin Civil 3D"
+							LoadOnAutoCADStartup="True" />
+	</Components>
+</ApplicationPackage>

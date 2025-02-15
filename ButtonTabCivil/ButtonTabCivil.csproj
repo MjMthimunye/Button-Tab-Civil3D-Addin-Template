@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Jacobian32.ico" />
+    <None Remove="Resources\saveFile.ico" />
+    <None Remove="Resources\saveFile32.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="accoremgd">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\Autodesk\AutoCAD 2025\accoremgd.dll</HintPath>
+    </Reference>
+    <Reference Include="Acdbmgd">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\Autodesk\AutoCAD 2025\acdbmgd.dll</HintPath>
+    </Reference>
+    <Reference Include="Acmgd">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\Autodesk\AutoCAD 2025\acmgd.dll</HintPath>
+    </Reference>
+    <Reference Include="AdWindows">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\Autodesk\AutoCAD 2025\AdWindows.dll</HintPath>
+    </Reference>
+    <Reference Include="AecBaseMgd">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\Autodesk\AutoCAD 2025\ACA\AecBaseMgd.dll</HintPath>
+    </Reference>
+    <Reference Include="AeccDbMgd">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\Autodesk\AutoCAD 2025\C3D\AeccDbMgd.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Jacobian32.ico" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="SET BundleFolder=&quot;%25USERPROFILE%25\AppData\Roaming\Autodesk\ApplicationPlugins\JacobianDev.bundle&quot;&#xD;&#xA; &#xD;&#xA;if not exist %25BundleFolder%25\Contents mkdir %25BundleFolder%25\Contents&#xD;&#xA;&#xD;&#xA;copy &quot;$(TargetDir)ButtonTabCivil.dll&quot; %25BundleFolder%25\Contents\&#xD;&#xA;copy &quot;$(ProjectDir)PackageContents.xml&quot; %25BundleFolder%25\&#xD;&#xA;copy &quot;$(ProjectDir)\Resources\Jacobian32.ico&quot; %25BundleFolder%25\Contents\" />
+  </Target>
+
+</Project>

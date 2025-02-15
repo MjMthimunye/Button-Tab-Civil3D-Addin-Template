@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Debug2025": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Autodesk\\AutoCAD 2025\\acad.exe",
+      "commandLineArgs": "\"C:\\Program Files\\Autodesk\\AutoCAD 2025\\acad.exe\" /product C3D /language en-US\r\n"
+    }
+  }
+}
